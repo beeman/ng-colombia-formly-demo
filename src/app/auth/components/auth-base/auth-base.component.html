@@ -1,0 +1,21 @@
+<div class="card my-5">
+  <div class="card-header">
+    {{title}}
+  </div>
+
+  <div class="card-body">
+    <app-form [fields]="fields"
+              [model]="model"
+              [form]="form"
+              (onSubmit)="action.emit($event)">
+    </app-form>
+  </div>
+  <div class="card-footer">
+    <app-buttons [payload]="model"
+                 [form]="form"
+                 [buttons]="buttons"
+                 (action)="action.emit($event)">
+    </app-buttons>
+    <ng-content></ng-content>
+  </div>
+</div>

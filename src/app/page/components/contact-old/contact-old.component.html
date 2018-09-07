@@ -1,0 +1,57 @@
+<app-card title="Reactive Form">
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" formControlName="name" class="form-control" placeholder="Enter your name"
+             [ngClass]="{ 'is-invalid': form.controls['name'].touched && form.controls['name'].errors }"/>
+      <div *ngIf="form.controls['name'].touched && form.controls['name'].errors" class="invalid-feedback">
+        <div *ngIf="form.controls['name'].touched && form.controls['name'].errors.required">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email"> Email * </label>
+      <input type="email" formControlName="email" id="email" class="form-control" placeholder="Enter your email"
+             [ngClass]="{ 'is-invalid': form.controls['email'].touched && form.controls['email'].errors }">
+      <div *ngIf="form.controls['email'].touched && form.controls['email'].errors" class="invalid-feedback">
+        <div *ngIf="form.controls['email'].touched && form.controls['email'].errors.required">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country"> Country</label>
+      <select class="form-control" formControlName="country" id="country" placeholder="Select your country">
+        <option value="">Select your country</option>
+        <option *ngFor="let country of countries" [value]="country.value">{{ country.label }}</option>
+      </select>
+      <div *ngIf="form.controls['country'].touched && form.controls['country'].errors" class="invalid-feedback">
+        <div *ngIf="form.controls['country'].touched && form.controls['country'].errors.required">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message"> Message *</label>
+      <textarea class="form-control" formControlName="message" id="message" placeholder="Enter a message" cols="1"
+                rows="5"
+                [ngClass]="{ 'is-invalid': form.controls['message'].touched && form.controls['message'].errors }"></textarea>
+      <div *ngIf="form.controls['message'].touched && form.controls['message'].errors" class="invalid-feedback">
+        <div *ngIf="form.controls['message'].touched && form.controls['message'].errors.required">
+          This field is required
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-success" type="submit" [disabled]="!form.valid">
+      Submit
+    </button>
+
+  </form>
+</app-card>
