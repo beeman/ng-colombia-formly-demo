@@ -1,0 +1,8 @@
+<div class="list-group list-group-accent">
+  <div class="list-group-item">
+    Links to the Forms
+  </div>
+  <div class="list-group-item" *ngFor="let item of links">
+    <a [routerLink]="item.link"> {{ item.label }} </a>
+  </div>
+</div>

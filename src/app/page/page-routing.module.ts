@@ -2,23 +2,27 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
 import { HomeComponent } from './components/home/home.component'
-import { ContactComponent } from './components/contact/contact.component'
-import { ContactOldComponent } from './components/contact-old/contact-old.component'
-import { ContactNewComponent } from './components/contact-new/contact-new.component'
+import { ContactFormlyComponent } from './components/contact-formly/contact-formly.component'
+import { ContactFormlyFieldComponent } from './components/contact-formly-field/contact-formly-field.component'
+import { ContactFormlyFieldGroupComponent } from './components/contact-formly-field-group/contact-formly-field-group.component'
+import { ContactReactiveComponent } from './components/contact-reactive/contact-reactive.component'
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
   }, {
-    path: 'contact',
-    component: ContactComponent
+    path: 'contact-formly',
+    component: ContactFormlyComponent
   }, {
-    path: 'contact-old',
-    component: ContactOldComponent
+    path: 'contact-formly-field',
+    component: ContactFormlyFieldComponent
   }, {
-    path: 'contact-new',
-    component: ContactNewComponent
+    path: 'contact-formly-field-group',
+    component: ContactFormlyFieldGroupComponent
+  }, {
+    path: 'contact-reactive',
+    component: ContactReactiveComponent
   }
 ]
 

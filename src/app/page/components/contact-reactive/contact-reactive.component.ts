@@ -3,10 +3,9 @@ import { PageService } from '../../services/page.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
-  selector: 'app-contact-old',
-  templateUrl: './contact-old.component.html'
+  templateUrl: './contact-reactive.component.html'
 })
-export class ContactOldComponent implements OnInit {
+export class ContactReactiveComponent implements OnInit {
   public form = new FormGroup({})
   public countries: any[]
 

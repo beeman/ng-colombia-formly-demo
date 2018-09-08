@@ -1,5 +1,5 @@
 import { FormlyFieldConfig } from '@ngx-formly/core'
-import { Field } from './index'
+import { Field } from './field'
 
 export class FieldGroup {
 
